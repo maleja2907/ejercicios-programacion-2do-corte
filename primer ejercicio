@@ -1,0 +1,7 @@
+ def ordena_y_busca (list,libro):
+        '''
+        (algoritmo para una biblioteca)
+        diseñe un algoritmo que reciba una lista "list" la ordene en orden alfabetico descendente (de z a a) y busque el valor "libro" en ella
+        :param libro: nombre del libro que se desea buscar 
+        :return: retorna el nombre del libro indicado y la posicion en la que se encuentra
+        '''
