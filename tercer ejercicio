@@ -1,0 +1,28 @@
+class inventario():
+    '''
+    contexto:en una tienda se necesita mantener ordenado los productos que hay y sus respectivos precios 
+    diseñe una clase de objetos con sus respectivas funciones
+    objetivo: ir añadiendo productos a al inventario y su respectivo precio de manera que si se desea sber cual es el precio 
+    de un producto solo se ingrese el producto a evaluar y arroje el precio de dicho elemento 
+    '''
+
+    def __init__(self):
+        '''
+        ingrese las caracteristicas y si seran privadas o publicas
+        '''
+    def add_producto(self,product):
+       '''
+       agrga el productp
+       '''
+
+    def add_precio(self,price):
+        '''
+        agrega el precio 
+        '''
+
+    def search (self,elemento):
+        '''
+        Busca el elemento en la caracteristica de productos y se relaciona con el precio 
+        :param elemento: producto a buscar 
+        :return: retorna el objeto encontrado así como el precio correspondiente
+        '''
