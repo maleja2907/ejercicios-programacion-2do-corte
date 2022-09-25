@@ -1,0 +1,10 @@
+ def count_veces (primera,segunda):
+        '''
+        diseñe una funcion que reciba 2 cadenas de caracteres y arroje en posiciones de encuenra la 2da en la primera 
+        se asume que el usuario puede colocar cualquier combinación de mayusculas y minusculas
+        :param primera: cadena larga de caracteres (puede incluir espacios)
+        :param segunda: cadena de caracteres corta que se buscara en la primera 
+        :return: las posiciones en las que se encuentra segunda en la primera 
+        nota:si "segunda" no se encuentra en "primera" retorna none
+        '''
+     
