@@ -1,5 +1,6 @@
 class inventario():
     '''
+    el ejercicio planteado es muy similar al código propuesto como ejemplo para el uso de objetos, es necesario proponer otro ejercicio. 
     contexto:en una tienda se necesita mantener ordenado los productos que hay y sus respectivos precios 
     diseñe una clase de objetos con sus respectivas funciones
     objetivo: ir añadiendo productos a al inventario y su respectivo precio de manera que si se desea sber cual es el precio 
