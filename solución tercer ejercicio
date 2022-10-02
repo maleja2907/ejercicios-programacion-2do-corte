@@ -1,0 +1,60 @@
+import math
+import numpy as np
+def busc_en_filas(matriz,j):
+    columna=j
+    filal=[]
+    posi=[]
+    for fila in range(0,len(matriz)):
+        filal.append(matriz[fila][columna])
+    print(filal)
+    for k in range(1,len(matriz)+1):
+        if k not in filal:
+            posi.append(k)
+    return posi
+
+def busc_en_columnas(matriz,i):
+    columna = matriz[i]
+    posi=[]
+    for k in range(1, len(matriz) + 1):
+        if k not in columna:
+            posi.append(k)
+    return posi
+
+def bus_en_cuadrilla(matriz,i):
+    f=round(math.sqrt(len(matriz)))
+    matnew=[]
+    print(f)
+
+
+
+def soluciona_sudoku(grid):
+    for i in range (0,len(grid)):
+        print (i)
+        for j in range (0,len(grid)):
+            print (j)
+            if grid[i][j]==0:
+                print(true)
+
+
+
+
+
+
+
+
+
+grid = [
+            [0, 0, 0, 8, 0, 3, 0, 0, 0],
+            [0, 1, 0, 9, 0, 0, 7, 0, 8],
+            [0, 0, 0, 0, 4, 0, 0, 0, 9],
+            [2, 0, 0, 0, 0, 4, 0, 6, 0],
+            [4, 0, 7, 0, 0, 0, 9, 0, 5],
+            [0, 5, 0, 7, 0, 0, 0, 0, 1],
+            [7, 0, 0, 0, 3, 0, 0, 0, 0],
+            [3, 0, 6, 0, 0, 8, 0, 7, 0],
+            [0, 0, 0, 2, 0, 7, 0, 0, 0],
+        ]
+#print(soluciona_sudoku(grid))
+print(busc_en_filas(grid,0))
+print(busc_en_columnas(grid,0))
+print(bus_en_cuadrilla(grid,0))
