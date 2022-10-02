@@ -1,0 +1,16 @@
+------------------------primera solución -------------------
+
+def count_veces (primera,segunda):
+    pos=[]
+    for idx in range(len(primera)):
+        if primera[idx]== segunda:
+            pos.append(idx)
+    return pos
+print(count_veces("anitalava la tina","n"))
+
+----------------------segunda solucion--------------
+def count_veces (primera,segunda):
+    pos=primera.find(segunda)
+    return pos
+print(count_veces("anitalava la tina","n"))
+#arroja el valor de la segunda buscado en la primera leyendo la primera al derecho y al reves
