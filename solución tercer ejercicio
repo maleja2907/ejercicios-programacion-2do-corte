@@ -1,47 +1,75 @@
 import math
 import numpy as np
-def busc_en_filas(matriz,j):
-    columna=j
-    filal=[]
+def busc_en_columnas(matriz,fila):
+    columna=[]
     posi=[]
-    for fila in range(0,len(matriz)):
-        filal.append(matriz[fila][columna])
-    print(filal)
+    for colum in range(0,len(matriz)):
+        columna.append(matriz[colum][fila])
     for k in range(1,len(matriz)+1):
-        if k not in filal:
-            posi.append(k)
-    return posi
-
-def busc_en_columnas(matriz,i):
-    columna = matriz[i]
-    posi=[]
-    for k in range(1, len(matriz) + 1):
         if k not in columna:
             posi.append(k)
     return posi
 
-def bus_en_cuadrilla(matriz,i):
+def busc_en_filas(matriz,columna):
+    fila = matriz[columna]
+    posi=[]
+    for k in range(1, len(matriz) + 1):
+        if k not in fila:
+            posi.append(k)
+    return posi
+
+def bus_en_cuadrilla(matriz,columna,fila):
     f=round(math.sqrt(len(matriz)))
-    matnew=[]
-    print(f)
+    a = np.array(matriz)
+    newlist=[]
+    posi=[]
+    if columna<3 and fila<3:
+        matnew = a[0:3,0:3]#inicio y fin de FILA luego inicio y fin de COLUMNA
+    elif (columna > 2 and columna<6) and fila<3:
+        matnew = a[0:3, 3:6]
+    elif columna > 5 and fila<3:
+        matnew = a[0:3, 6:9]
+    elif columna<3 and (fila >2 and fila<6):
+        matnew = a[3:6, 0:3]
+    elif (columna > 2 and columna<6) and (fila >2 and fila<6):
+        matnew = a[3:6, 3:6]
+    elif columna > 5 and (fila >2 and fila<6):
+        matnew = a[3:6, 6:9]
+    elif columna<3 and fila>5:
+        matnew = a[6:9, 0:3]
+    elif (columna > 2 and columna<6) and fila>5:
+        matnew = a[6:9, 3:6]
+    elif columna > 5  and fila>5 :
+        matnew = a[6:9,6:9]
+
+    for c in range (0,len(matnew)):
+        for f in range (0,len(matnew)):
+            newlist.append(matnew[c][f])
+
+    for k in range(1,len(matriz)+1):
+        if k not in newlist:
+            posi.append(k)
+    return posi
+
+def opcion(lista1,lista2,lista3):
+    num = []
+    for k in range(1,10):
+        if (k in lista1) and (k in lista2) and (k in lista3):
+            num.append(k)
+    return num
 
 
 
 def soluciona_sudoku(grid):
-    for i in range (0,len(grid)):
-        print (i)
-        for j in range (0,len(grid)):
-            print (j)
-            if grid[i][j]==0:
-                print(true)
-
-
-
-
-
-
-
-
+    for columna in range (0,len(grid)):
+        for fila in range (0,len(grid)):
+            if grid[columna][fila]==0:
+                k=opcion(busc_en_columnas(grid,fila),busc_en_filas(grid,columna),bus_en_cuadrilla(grid,columna,fila))
+                if len(k)==1:
+                    grid[columna][fila]=k[0]
+    
+    for m in range(0,9):
+        print(grid[m])
 
 grid = [
             [0, 0, 0, 8, 0, 3, 0, 0, 0],
@@ -54,7 +82,9 @@ grid = [
             [3, 0, 6, 0, 0, 8, 0, 7, 0],
             [0, 0, 0, 2, 0, 7, 0, 0, 0],
         ]
-#print(soluciona_sudoku(grid))
-print(busc_en_filas(grid,0))
-print(busc_en_columnas(grid,0))
-print(bus_en_cuadrilla(grid,0))
+
+#print(busc_en_filas(grid,0))
+#print(busc_en_columnas(grid,0))
+#print(bus_en_cuadrilla(grid,0,0))
+print(soluciona_sudoku(grid))
+#print(opcion(busc_en_columnas(grid,0),busc_en_filas(grid,0),bus_en_cuadrilla(grid,0,0)))
