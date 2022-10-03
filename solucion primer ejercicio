@@ -1,0 +1,13 @@
+def ordena_y_busca(list, libro):
+    newlist=[]
+    for i in range(0,len(list)):
+        newlist.append(list[i].upper)
+    print(newlist)
+    '''
+    (algoritmo para una biblioteca)
+    diseñe un algoritmo que reciba una lista "list" la ordene en orden alfabetico descendente (de z a a) y busque el valor "libro" en ella
+    :param libro: nombre del libro que se desea buscar
+    :return: retorna el nombre del libro indicado y la posicion en la que se encuentra
+    '''
+lista=["diun","los juegos del hambre","Perci jacson","CIEN años de soledad","cREPUSCULO","holiiiiiiiiiiiiiii"]
+print(ordena_y_busca(lista,"diun"))
