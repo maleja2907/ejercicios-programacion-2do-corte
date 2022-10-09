@@ -1,7 +1,13 @@
- def ordena_y_busca (list,libro):
-        '''
-        (algoritmo para una biblioteca)
-        diseñe un algoritmo que reciba una lista "list" la ordene en orden alfabetico descendente (de z a a) y busque el valor "libro" en ella
-        :param libro: nombre del libro que se desea buscar 
-        :return: retorna el nombre del libro indicado y la posicion en la que se encuentra
-        '''
+ #para el perimetro debe preguntar al usuario que figura es(triangulo,circulo,cuadrilatero)
+#para el area debe hacer uso de la primera funcion, si el usuario elige un triangulo debe arrojar el area del prisma de base igual a la del triangulo especificado
+#si elije un circulo, debe arrojar el area del cilindro de base igual al circulo especificado
+#si elije un cuadrilatero, debe arrojar el area del cubo(caja) de base igual al circulo especificado
+import math
+def area_1(base,altura):
+    
+def perimetro():
+    """
+    realice aqui el codigo
+    nota:dentro de esta funcion se debe realizar las validaciones necesarias y la peticion al usuario de los valores
+    """
+print(perimetro())
