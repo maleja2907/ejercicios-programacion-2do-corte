@@ -16,8 +16,7 @@ def seg_nseg(contraseña):
         print("la contraseña no es segura, debe tener más de 10 caracteres")
 
 
+contraseña=input("ingrese la contraseña que desea evaluar")
 
 
-#TODO:A partir de aqui modificar el codigo.
-
-print(seg_nseg("HolaF1234asd"))
+print(seg_nseg(contraseña))
