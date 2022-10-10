@@ -1,0 +1,33 @@
+#Realice un codigo usando la funcion random para generar 100 numeros aleatorios, los cuales realice la suma de los pares y de los impares
+#al realizar la suma de estos, compararlos y que arroje el mayor valor y que imprima ("La sumatoria de los (pares/impares) es mayor")
+#TODO realice el codigo en la siguiente funcion
+import random
+
+def sum_parimp (sum):
+    impares=[]
+    pares=[]
+    sumimpares=0
+    sumpares=0
+    for i in sum:
+        if i%2==0:
+            pares.append(i)
+        else:
+            impares.append(i)
+    for p in pares:
+        sumpares+=p
+    for j in impares:
+        sumimpares+=j
+    if sumpares>sumimpares:
+        return ("La sumatoria de los pares es mayor a la de los impares")
+    else:
+        return ("la sumatoria de los impares es mayor a la de los pares")
+
+
+lista=[]
+limit=int(input("el rango de  elección para los numeros aleatorios sera de 0 a: (ingrese el valor)"))
+while len(lista)<101:
+    k=random.randint(0,limit)
+    lista.append(k)
+print(lista)
+
+print(sum_parimp(lista))
