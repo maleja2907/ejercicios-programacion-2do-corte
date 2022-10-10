@@ -1,0 +1,23 @@
+#CONTRASEÑA SEGURA O NO SEGURA
+#crear una funcion  la cual pueda determianr si una contraseña es segura o no es segura , debe incluir mas de 10 caracteres en los cuales debe haber mayusculas y numeros , no es necesario implementar caracteres especiales
+#NOTA: EL USUARIO DEBE INGRESAR LA CONTRASEÑA
+#EJEMPLO:Hola (imprime que no es seguro), HolaF12346("imprime que es segura")
+
+def seg_nseg(contraseña):
+    if len(contraseña)>10:
+        if contraseña.isupper()==False and contraseña.islower()==False:
+            if any(map(str.isdigit,contraseña))==True:
+                print("la contraseña es segura")
+            else:
+                print("la contraseña no es segura, debe tener mínimo un número")
+        else:
+            print("la contraseña no es segura, debe tener mínimo una mayúscula y una minúscula")
+    else:
+        print("la contraseña no es segura, debe tener más de 10 caracteres")
+
+
+
+
+#TODO:A partir de aqui modificar el codigo.
+
+print(seg_nseg("HolaF1234asd"))
