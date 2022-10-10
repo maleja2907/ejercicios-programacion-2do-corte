@@ -1,0 +1,21 @@
+#Se llevará a cabo un contador de oportunidades que tiene el jugador que sería (n+7) donde "n" sea el número total de letras de la palabra 
+#       Ej: palabra = "HOLA"  <---------> (n=4) y el número de intentos serían (4+7)
+
+#Si el jugador ingresa una letra que está en esa palabra entonces se mostrarían las casillas vacias y la letra en el lugar y no se le restaría punto a la variable contadora
+#Ej:  _ _ _ A
+
+#En caso que el jugador no ingrese una letra que se encuentre ahí entonces se le resta una unidad a la variable contadora
+
+#Por cada oportunidad que haga el jugador se debe de mostrar (casillas vacias o con la letra de la palabra / el contador de intentos que tiene / las letras que ya ingresó)
+
+#En caso de que la variable contadora llegue a 0 entonces el jugador perdió 
+#Si no alcanza a llegar a 0 y completa todas las letras de la palabra el jugador ganó
+
+palabra=str(input("jugador 1, ingrese la palabra para que el jugador 2 la adivine"))
+palablist=[]
+palablis2=[]
+palabra=palabra.upper()
+for i in range (0,len(palabra)):
+    palablist.append("_")
+    palablis2.append(palabra[i])
+print(palablist,palablis2)
