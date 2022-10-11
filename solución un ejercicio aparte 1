@@ -3,17 +3,17 @@
 #NOTA: EL USUARIO DEBE INGRESAR LA CONTRASEÑA
 #EJEMPLO:Hola (imprime que no es seguro), HolaF12346("imprime que es segura")
 
-def seg_nseg(contraseña):
-    if len(contraseña)>10:
-        if contraseña.isupper()==False and contraseña.islower()==False:
-            if any(map(str.isdigit,contraseña))==True:
-                print("la contraseña es segura")
+def seg_nseg(contraseña): #se inicia la funcion establecida para evaluar la contraseña con el parametro incial de la contraseña 
+    if len(contraseña)>10: # se tiene  la condicion para decir que si el tamaño de la contraseña es mayor de 10 puede seguir evaluandola
+        if contraseña.isupper()==False and contraseña.islower()==False: #evalua si la contraseña tiene todos sus caracteres en mayuscula, o toso en minusculas, si ninguno de las dos condiciones es verdadera significa que la contraseña tiene almenos una minuscula y una minuscula por lo que es segura y puese seguir evaluandola 
+            if any(map(str.isdigit,contraseña))==True: #evalua si la contraseña contiene al menos algun numero 
+                print("la contraseña es segura")#de ser asi imprimira que la contraseña es segura ya que cuenta con os parametros necesarios
             else:
-                print("la contraseña no es segura, debe tener mínimo un número")
+                print("la contraseña no es segura, debe tener mínimo un número")#si la contraseña no tiene algun numero imprime que no es segura y el porque
         else:
-            print("la contraseña no es segura, debe tener mínimo una mayúscula y una minúscula")
+            print("la contraseña no es segura, debe tener mínimo una mayúscula y una minúscula")#si alguna de las condiciones evaluadas es verdadera imprime que no es segura y el porque 
     else:
-        print("la contraseña no es segura, debe tener más de 10 caracteres")
+        print("la contraseña no es segura, debe tener más de 10 caracteres") # si la contraseña tiene menos de 10 caracteres imprime directamente que no es segura y el porque 
 
 
 contraseña=input("ingrese la contraseña que desea evaluar")
