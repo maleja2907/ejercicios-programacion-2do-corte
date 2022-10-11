@@ -1,21 +1,46 @@
-#Se llevará a cabo un contador de oportunidades que tiene el jugador que sería (n+7) donde "n" sea el número total de letras de la palabra 
+# Se llevará a cabo un contador de oportunidades que tiene el jugador que sería (n+7) donde "n" sea el número total de letras de la palabra
 #       Ej: palabra = "HOLA"  <---------> (n=4) y el número de intentos serían (4+7)
 
-#Si el jugador ingresa una letra que está en esa palabra entonces se mostrarían las casillas vacias y la letra en el lugar y no se le restaría punto a la variable contadora
-#Ej:  _ _ _ A
+# Si el jugador ingresa una letra que está en esa palabra entonces se mostrarían las casillas vacias y la letra en el lugar y no se le restaría punto a la variable contadora
+# Ej:  _ _ _ A
 
-#En caso que el jugador no ingrese una letra que se encuentre ahí entonces se le resta una unidad a la variable contadora
+# En caso que el jugador no ingrese una letra que se encuentre ahí entonces se le resta una unidad a la variable contadora
 
-#Por cada oportunidad que haga el jugador se debe de mostrar (casillas vacias o con la letra de la palabra / el contador de intentos que tiene / las letras que ya ingresó)
+# Por cada oportunidad que haga el jugador se debe de mostrar (casillas vacias o con la letra de la palabra / el contador de intentos que tiene / las letras que ya ingresó)
 
-#En caso de que la variable contadora llegue a 0 entonces el jugador perdió 
-#Si no alcanza a llegar a 0 y completa todas las letras de la palabra el jugador ganó
+# En caso de que la variable contadora llegue a 0 entonces el jugador perdió
+# Si no alcanza a llegar a 0 y completa todas las letras de la palabra el jugador ganó
 
-palabra=str(input("jugador 1, ingrese la palabra para que el jugador 2 la adivine"))
-palablist=[]
-palablis2=[]
-palabra=palabra.upper()
-for i in range (0,len(palabra)):
-    palablist.append("_")
-    palablis2.append(palabra[i])
-print(palablist,palablis2)
+palabra = str(input("jugador 1, ingrese la palabra para que el jugador 2 la adivine"))#el jugador ingresara una palabra 
+palablist = []#se grea una lista que sera la del ahorcado 
+palablis2 = []#esta lista es para comparar la palabra y si la letra dicha esta en la palabra para ubicarla en la misma posicion en la otra lista 
+palabra = palabra.upper()#la palabra se pone toda en mayuscula para que sea mas facil d evaluar 
+for i in range(0, len(palabra)):#se inicia un bucle para hacer la listas 
+    palablist.append('_')#la lista del ahoracado contara con tantos '_' como letras tenga la palabra 
+    palablis2.append(palabra[i])#la lista de la palabra contara con los elementos en el mismo horden de como se encuentran en la palabra 
+print(palablist)
+
+
+def ahorcado(palablist, palablis2):#se inicia la funcion del juego 
+    intentos = len(palablis2) + 7#los intentos seran iguales al tamaño de la lista de la palabra ya que seran la cantidad de letras que tenga mas 7
+    print("sus intentos son: ")#imprime sus intentos son 
+    print(intentos)#y cuantos intentos tiene
+    while intentos != 0:#el algoritmo se repetira mietras los intentos sea diferente de 0
+        if '_' not in palablist:#la primera evaluacion es decir que en la lusta ya no halla '_' en cullo caso el jugador habra ganado 
+            print("¡ha ganado!")#imprimir que el jugador gano 
+            break#se rompe el ciclo 
+        letra = str(input("ingrese una letra:"))#se le pide al jugador ingrese una letra 
+        letra2=letra.upper()#la letra se pone en mayuscula para compararla con los elementos en la lista de la palabra 
+        if letra2 not in palablis2:#si la letra no esta en la lista de l palabra 
+            print("¡ups! la letra no se encuentra, pierdes un intento")#se imprime que no esta y que pierde un intento 
+            intentos -= 1#la contadora de los intentos se le resta un intento 
+            print("sus intentos son: ")#impreme cuantos intentos le quedad 
+            print(intentos)#los intentos 
+        for i in range(0, len(palablis2)):#un buqle para recorre la lista de la palabra (las posiciones )
+            if letra2 == palablis2[i]:#si lo que hay en la posicion i de la lista de la palabra es igual a la letra 
+                palablist[i] = letra2#en la lista del ahorcado se coloca la letra en la misma posicion que se encuentra en la lista de la palabra 
+                print(palablist)#se imprime la lista de l ahorcado 
+    if intentos==0:#si los intentos llegan a 0 
+        print("¡ha perdido!")#el jugador a perdido (se imprime)
+
+print(ahorcado(palablist, palablis2))
