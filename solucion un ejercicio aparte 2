@@ -1,33 +1,35 @@
 #Realice un codigo usando la funcion random para generar 100 numeros aleatorios, los cuales realice la suma de los pares y de los impares
 #al realizar la suma de estos, compararlos y que arroje el mayor valor y que imprima ("La sumatoria de los (pares/impares) es mayor")
 #TODO realice el codigo en la siguiente funcion
-import random
+import random #se importa la libreria random para crear la lista de numeros aleatroios
 
-def sum_parimp (sum):
-    impares=[]
-    pares=[]
-    sumimpares=0
-    sumpares=0
-    for i in sum:
-        if i%2==0:
-            pares.append(i)
-        else:
-            impares.append(i)
-    for p in pares:
-        sumpares+=p
-    for j in impares:
-        sumimpares+=j
-    if sumpares>sumimpares:
-        return ("La sumatoria de los pares es mayor a la de los impares")
-    else:
-        return ("la sumatoria de los impares es mayor a la de los pares")
+def sum_parimp (sum):#inicia la funcion indicando el parametro que sera la lista de numeros ingresada
+    impares=[]#se inicia la lista donde se almacenaran los impares 
+    pares=[]#se inicia la listadonde se almacenaran los pares
+    sumimpares=0#es la variable que realizara la suma de los impares
+    sumpares=0#es la variable que realizara la suma de los pares
+    for i in sum:#un buqle que recorrera la lista para evaluar cada elemento 
+        if i%2==0:#si el residuo del elemento dividido 2 es cero sera par 
+            pares.append(i)#se añadira a la lista de pares 
+        else:#de lo contrario 
+            impares.append(i)#se añadirá a la lista de impares 
+    for p in pares:#inica el bucle para recorrer la lista de pares para poder sumarlos 
+        sumpares+=p#la variable contadora de los pares ira sumando cada elemento 
+    for j in impares:#inica el bucle para recorrer la lista de impares para poder sumarlos 
+        sumimpares+=j#la variable contadora de los impares ira sumando cada elemento 
+    if sumpares>sumimpares:# la condicion, si la suma de los pares es mayor a la de los impares 
+        return ("La sumatoria de los pares es mayor a la de los impares")#imprime que la de los pares es mayor a la de los impares 
+    elif sumpares<sumimpares:#la condicion, si la suma de los impares es mayor a la de los pares 
+        return ("la sumatoria de los impares es mayor a la de los pares")##imprime que la de los impares es mayor a la de los pares 
+    else
+        return("ambas sumas tiene el ismo valor")#de lo contrario ambas sumas tendran el mismo valor 
 
 
-lista=[]
-limit=int(input("el rango de  elección para los numeros aleatorios sera de 0 a: (ingrese el valor)"))
-while len(lista)<101:
-    k=random.randint(0,limit)
-    lista.append(k)
-print(lista)
+lista=[] #se inicia una lista vacia en cdonde se almacenaran los 100 numeros aleatorio
+limit=int(input("el rango de  elección para los numeros aleatorios sera de 0 a: (ingrese el valor)"))#esto es un limite establecido para utilizar la libreria de aleatoriedad
+while len(lista)<101:#se inicia un bucle para ir añadiendo valores a la lista hasta que halla 100
+    k=random.randint(0,limit)#se genera valore aleatorio de 0 al limite establecido
+    lista.append(k)#se añade a la lista el valor generado 
+print(lista) #se imprime la lista para saber cual es 
 
-print(sum_parimp(lista))
+print(sum_parimp(lista))#se hace el llamamiento a la funcion 
