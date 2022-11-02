@@ -1,22 +1,22 @@
 operacion=str(input("ingrese el enunciado separando por espacios los numeros a operar y la operacion deseada, ejemplo 345 + 789: "))
-operacion=operacion.split(sep=" ")
+operacion=operacion.split(sep=" ") #se separa en una lista el enuncia, separando los numero o numero a operar del operador 
 
 
-def operar(operacion):
-    if len(operacion)==3:
-        numero1 = int(operacion[0])
-        numero2 = int(operacion[2])
-        operador = operacion[1]
-        resultado=operar1(numero1,numero2,operador)
+def operar(operacion):#funcion que identidfica si el enunciado posee 2 elementos a operar o unos solo
+    if len(operacion)==3:#en caso de tener dos numero s operar 
+        numero1 = int(operacion[0])#identificara el primero 
+        numero2 = int(operacion[2])#EL SEGUNDO
+        operador = operacion[1]#y el operados
+        resultado=operar1(numero1,numero2,operador)#y utilizara la funcion de operar 1 que cuenta con 3 argumentos
         return resultado
-    else:
-        numero1 = int(operacion[0])
-        operador = operacion[1]
-        resultado = operar2(numero1,operador)
+    else:#en caso de tener un solo numero (q por descarte sera e del factorial )
+        numero1 = int(operacion[0])#se identificara dicho numero del que se quiere conocer el factorial 
+        operador = operacion[1]#y e operador dado que el usuario se puede confuncir de operador 
+        resultado = operar2(numero1,operador)#utilizara la duncion operar2 que cuenta con 2 argumentos 
         return resultado
 
 
-def operar1(numero1,numero2,operador):
+def operar1(numero1,numero2,operador):#funcion en la que a partir de condicionales se identifica la operacion deseada a realizar y se realiza con los parmetros ingresados 
     if operador == "+":
         resultado=numero1+numero2
     elif operador == "-":
@@ -27,14 +27,16 @@ def operar1(numero1,numero2,operador):
         resultado = numero1 / numero2
     elif operador == "^":
         resultado = numero1 ** numero2
+    else:
+        print("al enunciado le faltan argumentos para ser valido para operar o el operador es incorrecto")
     return resultado
-def operar2(numero1,operador):
-    if operador=="!":
-        if numero1==1 or numero1==0:
+def operar2(numero1,operador):#funcion que realiza el factorial del numero ingresado 
+    if operador=="!":#ideantifica que si sea factorial la operacion deseada 
+        if numero1==1 or numero1==0:#se dan las condiiones mas favorables y se realizan las operacines 
             resultado = 1
         else:
             resultado=numero1*operar2(numero1-1,"!")
-    else:
+    else:#en caso que no se imprime el mensaje de ingreso erroneo 
         print("al enunciado le faltan argumentos para ser valido para operar o el operador es incorrecto")
     return resultado
 
