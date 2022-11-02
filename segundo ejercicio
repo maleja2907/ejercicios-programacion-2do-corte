@@ -1,8 +1,6 @@
 
 '''
-realice una calculadora basica con interfaz grafica que realice los procesos de suma resta multiplicacion  y divicion 
+realice una calculadora basica que realice los procesos de suma, resta, multiplicacion,divicion, potenciacion y factorial 
 '''
 NOTA
--puede hacer uso de la libreria tkinter
--puede hacer uso de la libreria math
--como idea puede crear una clase para manejar la interfaz (pantalla emergente) comoun objeto aparte con parametros como el baner y los botones
+-el usuario no debe especificar la operacion que requiere, simlemente ingresa el enunciado (puede ingresarlo separando los numeros de la operacion con espacion o algun caracter)
