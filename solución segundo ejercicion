@@ -1,16 +1,41 @@
-------------------------primera solución -------------------
+operacion=str(input("ingrese el enunciado separando por espacios los numeros a operar y la operacion deseada, ejemplo 345 + 789: "))
+operacion=operacion.split(sep=" ")
 
-def count_veces (primera,segunda):
-    pos=[]
-    for idx in range(len(primera)):
-        if primera[idx]== segunda:
-            pos.append(idx)
-    return pos
-print(count_veces("anitalava la tina","n"))
 
-----------------------segunda solucion--------------
-def count_veces (primera,segunda):
-    pos=primera.find(segunda)
-    return pos
-print(count_veces("anitalava la tina","n"))
-#arroja el valor de la segunda buscado en la primera leyendo la primera al derecho y al reves
+def operar(operacion):
+    if len(operacion)==3:
+        numero1 = int(operacion[0])
+        numero2 = int(operacion[2])
+        operador = operacion[1]
+        resultado=operar1(numero1,numero2,operador)
+        return resultado
+    else:
+        numero1 = int(operacion[0])
+        operador = operacion[1]
+        resultado = operar2(numero1,operador)
+        return resultado
+
+
+def operar1(numero1,numero2,operador):
+    if operador == "+":
+        resultado=numero1+numero2
+    elif operador == "-":
+        resultado = numero1 - numero2
+    elif operador == "*":
+        resultado = numero1 * numero2
+    elif operador == "/":
+        resultado = numero1 / numero2
+    elif operador == "^":
+        resultado = numero1 ** numero2
+    return resultado
+def operar2(numero1,operador):
+    if operador=="!":
+        if numero1==1 or numero1==0:
+            resultado = 1
+        else:
+            resultado=numero1*operar2(numero1-1,"!")
+    else:
+        print("al enunciado le faltan argumentos para ser valido para operar o el operador es incorrecto")
+    return resultado
+
+print(operar(operacion))
