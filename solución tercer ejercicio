@@ -70,7 +70,7 @@ def soluciona_sudoku(grid):
     
     for m in range(0,9):
         print(grid[m])
-
+m
 grid = [
             [0, 0, 0, 8, 0, 3, 0, 0, 0],
             [0, 1, 0, 9, 0, 0, 7, 0, 8],
